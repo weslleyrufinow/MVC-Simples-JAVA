@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+
+<h:head>
+ <title>AP2 Weslley Rufino</title>
+ <style>
+    body {
+    background-color: black
+    }
+</style>
+</h:head >
+
+<h:body>
+    <center> 
+    <h:form id="formulario">
+        <h:messages id="messages" style = "font-size: 15px;color:red;margin:8px;font-family: Verdana;"  />
+        
+        <div style="text-align:center">
+            <h><font size="20" face="Verdana" color="white">
+                    AP2 POO                    
+               </font></h>
+        </div> 
+        <div style="text-align:center">
+            <h><font size="12" face="Calibri" color="white">                    
+                    Antonio Weslley Sylvio Moreira Rufino
+               </font></h>
+        </div>                 
+        <h:panelGrid styleClass="panelGridCenter" columns ="7">
+            
+                <p:panelGrid columns ="2" id="enter">
+                    <h:outputText value ="Entrada:"/>
+                    <p:inputText placeholder="Digite um numero" id= "entrada" value ="#{Controller.modelo.valor}"  />
+                    
+                    
+                </p:panelGrid>                
+            
+            <p:commandButton style = "background-color: red"  value ="Seno"  action="#{Controller.submeteseno()}" update="resultado,messages" />
+            <p:commandButton style = "background-color: blue" value ="Cosseno"  action="#{Controller.submetecosseno()}" update="resultado,messages" />
+            <p:commandButton style = "background-color: blueviolet" value ="Raiz"  action="#{Controller.submeteraiz()}" update="resultado,messages" />
+            <p:commandButton style = "background-color: green" value ="Tangente"  action="#{Controller.submetetangente()}" update="resultado,messages" />
+            <p:commandButton style = "background-color: yellow" value ="Incrementar"  action="#{Controller.submeteincrementar()}" update="resultado,messages" />
+            <p:commandButton style = "background-color: orange" value ="Decrementar"  action="#{Controller.submetedecrementar()}" update="resultado,messages" />
+        </h:panelGrid>
+
+        <p:panelGrid styleClass="panelGridCenter" columns ="2" id="resultado">
+            <h:outputText value ="Resultado:"/>                    
+            <h:outputText value ="#{Controller.x}"/>                    
+        </p:panelGrid>
+        
+    </h:form>
+    </center>
+    
+</h:body >
+</html>
